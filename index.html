@@ -1,0 +1,78 @@
+
+<script src="http://i.codeken.local/js/jquery-1.7.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+	var socket = io.connect('http://localhost');
+	socket.on('hello',function(data){
+		$(document.body).prepend('<div>'+data+'</div>');
+	});
+	socket.on('data',function(data){
+		$(document.body).prepend('<div>'+data+'</div>');
+	});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<div class='column' id="searchoutput">&nbsp;</div>
+
+
+<script src="http://i.codeken.local/js/jquery-1.7.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+	var socket = io.connect('http://localhost');
+	
+	socket.on('search-tweet', function (tweet) {
+		show('#searchoutput',tweet);
+	});
+	
+	// document.onready
+	$(function(){
+		
+		// Click handler for search filter
+		$('#filter').click(function(){
+			console.log('clicked search with new value',$('#term').val());
+			socket.emit( 'filter', {text:$('#term').val()} );
+		});
+	
+	});
+	
+	function show( container, tweet ){
+		$("<div class='tweet'><img src='"+tweet.user.profile_image_url+"'/><h4>"+tweet.user.screen_name+"</h4><div>"+tweet.text+"</div></div>").prependTo(container).animate({height:50},200);
+	}
+</script>
+
+
+<style>
+	.column { width:400px; float:left }
+	.tweet { padding:5px; clear:both; height:0; overflow:hidden }
+		.tweet img { height:48px; width:48px; float:left; margin-right:10px }
+		.tweet h4 { float:left; padding:0; margin:0 10px 0 0 }
+</style>
+
+-->
